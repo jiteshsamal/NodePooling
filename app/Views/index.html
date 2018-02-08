@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Pusher Test</title>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.0/highcharts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="app.js"></script>
+    <script>
+    </script>
+</head>
+
+<body ng-app="pushApp" ng-controller="mycntrl">
+    Welcome to voting site
+
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="vote.osType" value="Microsoft">Microsoft
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+    <input type="radio" ng-model="vote.osType" value="Android">Android
+    </label>
+    </div>
+    <div class="radio">
+        <label>
+    <input type="radio" ng-model="vote.osType" value="Linux">Linux
+            </label>
+    </div>
+    <div class="radio">
+        <label>
+    <input type="radio" ng-model="vote.osType" value="Apple">Apple
+            </label>
+    </div>
+
+
+
+
+
+    <button class="btn btn-warning" ng-click="getVoteingData()">Draw Report</button>
+    <button class="btn btn-primary" ng-click="PostVote()">Vote</button>
+
+    <div ng-if="series.length>0">
+        <chart-directive series="series" categories="categories"></chart-directive>
+    </div>
+
+</body>
